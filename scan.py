@@ -1,0 +1,13 @@
+import scapy.all as scapy
+def scann(ip):
+  arp_request = scapy.ARP(pdst=ip)
+  brotecast = scapy = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
+  arp_request_brotecast = brotecast/arp_request
+
+answare_list = scapy.srp(arp_request_brotecast, timeout=1, verbose=False)[0]
+
+print("--------------------------------------------------\nIP\t\t\tMAC_Adress/n--------------------------------------------------")
+for element in answare_list:
+  print(element[1].psrc + "\t\t" + element[1].hwsrc)
+
+scann("10.88.0.1/24")
