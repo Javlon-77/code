@@ -1,4 +1,6 @@
 import scapy.all as scapy
+import argparse
+
 def scann(ip):
   arp_request = scapy.ARP(pdst=ip)
   brotecast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
@@ -10,4 +12,8 @@ def scann(ip):
   for element in answare_list:
     print(element[1].psrc + "\t\t" + element[1].hwsrc)
 
-scann("10.88.0.1/24")
+parser = argparse.ArgumentParser()
+parser.add_argument("-i", dest="ip")
+options = parser.parse_args()
+
+scann(options.ip)
