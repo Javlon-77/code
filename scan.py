@@ -1,5 +1,4 @@
 import scapy.all as scapy
-import argparse
 
 def scann(ip):
   arp_request = scapy.ARP(pdst=ip)
