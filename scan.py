@@ -12,8 +12,6 @@ def scann(ip):
   for element in answare_list:
     print(element[1].psrc + "\t\t" + element[1].hwsrc)
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-i", dest="ip")
-options = parser.parse_args()
+a = scann[-14]
 
-scann(options.ip)
+scann(a)
