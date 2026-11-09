@@ -1,4 +1,5 @@
 import scapy.all as scapy
+import argparse
 
 def scann(ip):
   arp_request = scapy.ARP(pdst=ip)
@@ -11,6 +12,9 @@ def scann(ip):
   for element in answare_list:
     print(element[1].psrc + "\t\t" + element[1].hwsrc)
 
-a = scann[-14:]
+parser = argparse.ArgumentParser()
+parser.add_argument("ip")
+options = parser.parse_args()
 
+a = options.ip[:]
 scann(a)
