@@ -12,6 +12,6 @@ def scann(ip):
   for element in answare_list:
     print(element[1].psrc + "\t\t" + element[1].hwsrc)
 
-a = scann[-14]
+a = scann[-14:]
 
 scann(a)
