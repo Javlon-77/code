@@ -13,7 +13,7 @@ def scann(ip):
     print(element[1].psrc + "\t\t" + element[1].hwsrc)
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-i", dest="ip", required=True)
+parser.add_argument("-target", dest="ip", required=True)
 options = parser.parse_args()
 
 scann(options.ip)
